@@ -1,13 +1,24 @@
 <html>
 <head>
+<title>Data</title>
+<h1>Data sending app</h1>
 <script>
-  alert("Try clicking this page")
-function hello(){
-let audio = new Audio("Testfinal.m4a")
-audio.play()
+if ('geolocation' in navigator) 
+{
+  console.log('geolocation is available')
+  
+  navigator.geolocation.getCurrentPosition((position) => {
+  //(position.coords.latitude, position.coords.longitude);
+ // console.log(position.coords.latitude)
+  //console.log(position.coords.longitude)
+    alert("Latitude: " + position.coords.latitude)
+  alert("Longitude: " + position.coords.longitude)
+});
+}
+ else 
+ {
+  console.log('geolocation is not available')
 }
 </script>
-</head>
-<body onclick="hello()">
 </body>
 </html>
